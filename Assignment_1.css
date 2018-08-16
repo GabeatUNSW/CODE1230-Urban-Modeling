@@ -17,6 +17,8 @@ body
 }
 header
 {
-  background-image:url(https://raw.githubusercontent.com/GabeatUNSW/CODE1230-Urban-Modeling/master/pexels-photo-457937.jpg);
+  background-image:linear-gradient(rgb(0,0,0,0.7),rgb(0,0,0,0.7)),url(https://raw.githubusercontent.com/GabeatUNSW/CODE1230-Urban-Modeling/master/pexels-photo-457937.jpg);
   height:100vh;
+  background-position: center;
+  background-size: cover;
 }
