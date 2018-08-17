@@ -6,6 +6,11 @@
   margin-left: 80px;
 }
 
+html
+{
+  background-color: Cool gray;
+}
+
 body
 {
   font-family:tahoma;
