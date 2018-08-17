@@ -20,7 +20,7 @@ body
 table 
 {
   border-collapse: collapse;
-  width: 100%
+  width: %
   padding: 8px;
   text-align:center;
 }
