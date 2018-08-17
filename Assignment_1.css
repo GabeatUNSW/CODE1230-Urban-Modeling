@@ -41,5 +41,12 @@ h1
 }
 .btn-half
 {
-  
+  background-color:#e67e22;
+  color:white; 
+}
+.btn-full:hovor
+{
+  background-color:#e67e22;
+  color:white;
+  transition:all 0.5s ease-in;
 }
