@@ -1,15 +1,73 @@
 <html>
 <head>
-    <title>Task2</title>
+    <title>Occupation by Age by Sex</title>
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.48.0/mapbox-gl.css' rel='stylesheet' />
+
+    <meta charset='utf-8' />
+    <h1> Occupation by Age by Sex </h1>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.48.0/mapbox-gl.js'></script>
+    <script src='./data.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.48.0/mapbox-gl.css' rel='stylesheet' />
+    <style>
+        body { margin:0; padding:0; }
+        #map { position:absolute; top:0px; left:0px; bottom:0px; width:100%; }
+    </style>
 </head>
+
+
 <body>
+    <title> Gabriel Schmidt </title>
     <a href="http://127.0.0.1:8000/">Map</a>
-    <iframe src="http://127.0.0.1:8000/" style="width:800px;height:400px;"></iframe>
-    <p>Distribution of Blue Collar Jobs<p>
-    <image src="https://raw.githubusercontent.com/GabeatUNSW/CODE1230-Urban-Modeling/master/Blue%20Collar.JPG" alt="imagemissing" style="width:800px;height:400px;" />
-    <p>Distribution of White Collar Jobs<p>
-    <image src="https://raw.githubusercontent.com/GabeatUNSW/CODE1230-Urban-Modeling/master/White%20Collar.JPG" alt="imagemissing" style="width:800px;height:400px;" />
+    <iframe src="http://127.0.0.1:8000/" alt="image missing!" style="width: 90%" align="middle"></iframe>
+
+<script>
+mapboxgl.accessToken = 'pk.eyJ1IjoiZ2FiZWF0dW5zdyIsImEiOiJjamx0YXQ1eGIwNzdxM3FwZXRrZTkxN3l3In0.OwPQDDExyLqW_U4VC3bOrw';
+var map = new mapboxgl.Map({
+    container: 'map', // container id
+    style: 'mapbox://styles/mapbox/light-v9', // stylesheet location
+    center: [151.004105, -33.813002], // starting position [lng, lat]
+    pitch: 45,
+    bearing: -17.6,
+    zoom: 9 // starting zoom
+});
+map.on('load', function() {
+    map.addLayer({
+        "id": "data",
+        "type": "fill-extrusion",
+        "source": {
+            'type': 'geojson',
+            'data': data
+        },
+        'paint': {
+ 'fill-extrusion-color' : {
+                    'property': 'blue_1',
+                    "stops": [
+                        [0, '#B2DEE6'],
+                        [108,'#71D7BF'],
+                        [472,'#0D3D6E'],
+                        [1900,'#380862'],
+                        [4000,'#0D0D6E'],
+                        [6000,'#6500BD']
+                    ]
+             
+                },
+                'fill-extrusion-height' : {
+                    'property': 'blue_1',
+                    "stops": [
+                        [0, 0],
+                        [61, 6100],
+                        [121, 12100],
+                        [240, 24000],
+                        [787, 78700],
+                        [2100,210000]
+                    ]
+                },
+                 'fill-extrusion-opacity': 0.9
+        }
+    });
+});
+</script>
 </body>
 </body>
 </html>
